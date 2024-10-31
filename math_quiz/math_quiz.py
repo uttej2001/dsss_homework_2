@@ -1,6 +1,5 @@
 import random
 
-
 def generate_random_integer(min_value, max_value):
     """
     Generate a random integer within a specified range.
@@ -14,7 +13,6 @@ def generate_random_integer(min_value, max_value):
     """
     return random.randint(min_value, max_value)
 
-
 def choose_random_operator():
     """
     Select a random mathematical operator from the list ['+', '-', '*'].
@@ -23,7 +21,6 @@ def choose_random_operator():
         str: A random operator as a string.
     """
     return random.choice(['+', '-', '*'])
-
 
 def create_math_problem(num1, num2, operator):
     """
@@ -47,7 +44,6 @@ def create_math_problem(num1, num2, operator):
         answer = num1 * num2
 
     return problem_str, answer
-
 
 def play_math_quiz():
     """
@@ -83,7 +79,6 @@ def play_math_quiz():
 
     print(f"\nQuiz Complete! Your final score is {score}/{total_questions}.")
     print("Thank you for playing!")
-
 
 if __name__ == "__main__":
     play_math_quiz()

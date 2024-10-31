@@ -1,7 +1,6 @@
 import unittest
 from math_quiz import generate_random_integer, choose_random_operator, create_math_problem
 
-
 class TestMathQuiz(unittest.TestCase):
 
     def test_generate_random_integer(self):
@@ -31,7 +30,6 @@ class TestMathQuiz(unittest.TestCase):
             problem, answer = create_math_problem(num1, num2, operator)
             self.assertEqual(problem, expected_problem)
             self.assertEqual(answer, expected_answer)
-
 
 if __name__ == "__main__":
     unittest.main()
