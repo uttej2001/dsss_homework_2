@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import random
 
+
 def generate_random_integer(min_value, max_value):
     """
     Generate a random integer within a specified range.
@@ -14,29 +15,15 @@ def generate_random_integer(min_value, max_value):
     """
     return random.randint(min_value, max_value)
 
-def choose_random_operator():
-    """
-    Select a random mathematical operator from the list ['+', '-', '*'].
 
-    Returns:
-        str: A random operator as a string.
-    """
+def choose_random_operator():
+    """Select a random mathematical operator."""
     return random.choice(['+', '-', '*'])
 
+
 def create_math_problem(num1, num2, operator):
-    """
-    Generate a math problem and its correct answer based on the operator.
-
-    Parameters:
-        num1 (int): The first number.
-        num2 (int): The second number.
-        operator (str): The mathematical operator ('+', '-', '*').
-
-    Returns:
-        tuple: A string of the problem and the correct answer as an integer.
-    """
+    """Generate a math problem and its correct answer."""
     problem_str = f"{num1} {operator} {num2}"
-    # Fixed reversed '+' and '-' operations to ensure correct answers
     if operator == '+':
         answer = num1 + num2
     elif operator == '-':
@@ -46,11 +33,9 @@ def create_math_problem(num1, num2, operator):
 
     return problem_str, answer
 
+
 def play_math_quiz():
-    """
-    Main function for the Math Quiz Game.
-    Presents the player with random math questions and evaluates their answers.
-    """
+    """Main function for the Math Quiz Game."""
     score = 0
     total_questions = 3
 
@@ -59,13 +44,12 @@ def play_math_quiz():
 
     for i in range(total_questions):
         num1 = generate_random_integer(1, 10)
-        num2 = generate_random_integer(1, 5)  # fixed max value to 5 for integer compatibility
+        num2 = generate_random_integer(1, 5)  # Fixed max value to 5 for integer compatibility
         operator = choose_random_operator()
 
         problem, correct_answer = create_math_problem(num1, num2, operator)
-        print(f"\nQuestion {i}: {problem}")
+        print(f"\nQuestion {i + 1}: {problem}")
 
-        # Error handling to ensure the user enters a valid integer
         try:
             user_answer = int(input("Your answer: "))
         except ValueError:
@@ -73,13 +57,14 @@ def play_math_quiz():
             continue
 
         if user_answer == correct_answer:
-            print("Correct! Well done. You earned a point.")
+            print("Correct! Well done.")
             score += 1
         else:
             print(f"Oops, that's not correct. The correct answer was {correct_answer}.")
 
     print(f"\nQuiz Complete! Your final score is {score}/{total_questions}.")
     print("Thank you for playing!")
+
 
 if __name__ == "__main__":
     play_math_quiz()
