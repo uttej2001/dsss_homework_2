@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import unittest
 from math_quiz import generate_random_integer, choose_random_operator, create_math_problem
 

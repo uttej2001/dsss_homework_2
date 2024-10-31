@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import random
 
 def generate_random_integer(min_value, max_value):
